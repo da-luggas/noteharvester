@@ -11,6 +11,7 @@ Since Apple removed the ability to bulk export the highlights and notes you crea
 
 ## Installation
 - Download the latest [Release](https://github.com/da-luggas/clou/releases)
+- Extract the archive
 - Drag the app into your Applications folder
 - Allow the app to access other app's folders as well as iCloud. This is needed to access the Apple Books library
 
