@@ -10,12 +10,13 @@ Since Apple removed the ability to bulk export the highlights and notes you crea
 - Bulk export to CSV
 
 ## Installation
-- Download the latest [Release](https://github.com/da-luggas/clou/releases)
-- Extract the archive
-- Drag the app into your Applications folder
-- Allow the app to access other app's folders as well as iCloud. This is needed to access the Apple Books library
+1. Download the latest [Release](https://github.com/da-luggas/clou/releases)
+2. Extract the archive
+3. Drag the app into your Applications folder
+4. Allow the app to access other app's folders as well as iCloud. This is needed to access the Apple Books library
 
 ## Planned for the future
 - Export into different formats (e.g. Readwise, Excel)
 - Automatic updates using Sparkle
 - Automated synchronization of bookmarks with third party apps
+- More ideas? Create an issue :)
