@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ContentViewModel()
+    @State var books: [Book] = []
+    @State var selectedBooks: Set<Book> = []
+    @State var annotations: [Annotation] = []
+    @State var selectedAnnotations: Set<Annotation> = Set<Annotation>()
+    
+    private let databaseManager = DatabaseManager()
 
     var body: some View {
         NavigationSplitView {
-            // Left side: List of books with multi-selection enabled
-            List(viewModel.books, id: \.self, selection: $viewModel.selectedBooks) { book in
+            List(books, id: \.self, selection: $selectedBooks) { book in
                 VStack(alignment: .leading) {
                     Text(book.title)
                     Text(book.author)
@@ -21,20 +25,13 @@ struct ContentView: View {
                         .foregroundColor(.gray)
                 }
             }
-            .onChange(of: viewModel.selectedBooks) { _ in
-                DispatchQueue.main.async {
-                    viewModel.loadAnnotations() // Load annotations when selected books change
-                }
-            }
-            .navigationTitle("Books")
         } detail: {
-            if viewModel.annotations.isEmpty {
+            if annotations.isEmpty {
                 Text("Select one or more books to view annotations.")
                     .font(.headline)
                     .foregroundColor(.gray)
             } else {
-                // Right side: List of annotations, selectable
-                List(viewModel.annotations, id: \.self, selection: $viewModel.selectedAnnotation) { annotation in
+                List(annotations, id: \.self, selection: $selectedAnnotations) { annotation in
                     VStack(alignment: .leading) {
                         Text(annotation.quote)
                             .font(.headline)
@@ -48,10 +45,38 @@ struct ContentView: View {
                     }
                     .padding(.vertical, 5)
                 }
-                .navigationTitle("Annotations")
             }
         }
+        .onAppear() {
+            loadBooks()
+        }
+        .onChange(of: selectedBooks) {
+            loadAnnotations()
+        }
         .frame(minWidth: 600, minHeight: 400)
+    }
+    
+    func loadAnnotations() {
+        annotations.removeAll() // Clear previous annotations
+        
+        for book in selectedBooks {
+            do {
+                let bookAnnotations = try databaseManager.getAnnotations(forBookId: book.id)
+                annotations.append(contentsOf: bookAnnotations)
+            } catch {
+                print("Failed to load annotations for book \(book.id): \(error)")
+            }
+        }
+        
+        annotations.sort { $0.createdAt ?? 0 < $1.createdAt ?? 0 } // Sort annotations by creation date
+    }
+    
+    private func loadBooks() {
+        do {
+            self.books = try databaseManager.getBooks()
+        } catch {
+            print("Failed to load books: \(error)")
+        }
     }
 }
 
