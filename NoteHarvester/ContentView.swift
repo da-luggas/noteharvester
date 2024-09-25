@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State var books: [Book] = []
     @State var selectedBooks: Set<Book> = []
-    @State var annotations: [Annotation] = []
     @State var selectedAnnotations: Set<Annotation> = Set<Annotation>()
     
     private let databaseManager = DatabaseManager()
@@ -45,56 +44,43 @@ struct ContentView: View {
                             .font(.caption)
                         Text(book.title)
                             .font(.headline)
-                        Text("\(annotations.count) Highlights")
+                        Text(book.annotations.count == 1 ? "1 Highlight" : "\(book.annotations.count) Highlights")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                     }
                 }
             }
         } detail: {
             if selectedBooks.isEmpty {
                 Text("Select one or more books to view annotations.")
-            } else if annotations.isEmpty {
-                Text("There are no annotations in the selected books.")
-                    .font(.headline)
-                    .foregroundColor(.gray)
             } else {
-                List(annotations, id: \.self, selection: $selectedAnnotations) { annotation in
-                    VStack(alignment: .leading) {
-                        Text(annotation.quote)
-                            .font(.headline)
-                            .foregroundColor(.primary)
-                        
-                        if let comment = annotation.comment {
-                            Text(comment)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
+                let selectedAnnotations = selectedBooks.flatMap { $0.annotations }
+                if selectedAnnotations.isEmpty {
+                    Text("There are no annotations in the selected books.")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                } else {
+                    List(selectedAnnotations, id: \.self, selection: $selectedAnnotations) { annotation in
+                        VStack(alignment: .leading) {
+                            Text(annotation.quote)
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            
+                            if let comment = annotation.comment {
+                                Text(comment)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
                         }
+                        .padding(.vertical, 5)
                     }
-                    .padding(.vertical, 5)
                 }
             }
         }
         .onAppear() {
             loadBooks()
         }
-        .onChange(of: selectedBooks) {
-            loadAnnotations()
-        }
         .frame(minWidth: 600, minHeight: 400)
-    }
-    
-    func loadAnnotations() {
-        annotations.removeAll() // Clear previous annotations
-        
-        for book in selectedBooks {
-            do {
-                let bookAnnotations = try databaseManager.getAnnotations(forBookId: book.id)
-                annotations.append(contentsOf: bookAnnotations)
-            } catch {
-                print("Failed to load annotations for book \(book.id): \(error)")
-            }
-        }
-        
-        annotations.sort { $0.createdAt ?? 0 < $1.createdAt ?? 0 } // Sort annotations by creation date
     }
     
     private func loadBooks() {

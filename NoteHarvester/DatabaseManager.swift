@@ -51,14 +51,15 @@ class DatabaseManager {
                 }
                 let cover = parseCoverImage(bookPathString: coverPathString)
                 
-                books.append(Book(id: id, title: title, author: author, cover: cover))
+                let annotations = try getAnnotations(forBookId: id)
+                books.append(Book(id: id, title: title, author: author, cover: cover, annotations: annotations))
             }
         }
         
         return books
     }
     
-    func getAnnotations(forBookId bookId: String) throws -> [Annotation] {
+    private func getAnnotations(forBookId bookId: String) throws -> [Annotation] {
         let annotationsFiles = try FileManager.default.contentsOfDirectory(atPath: ANNOTATION_DB_PATH).filter { $0.hasSuffix(".sqlite") }
         var annotations: [Annotation] = []
 
@@ -90,9 +91,7 @@ class DatabaseManager {
     }
     
     private func parseCoverImage(bookPathString: String) -> URL? {
-        
-        guard let document = EPUBDocument(url: URL(fileURLWithPath: bookPathString)) else { return nil}
-        
+        guard let document = EPUBDocument(url: URL(fileURLWithPath: bookPathString)) else { return nil }
         return document.cover
     }
 }
@@ -102,6 +101,11 @@ struct Book: Hashable {
     let title: String
     let author: String
     let cover: URL?
+    let annotations: [Annotation]
+    
+    var latestAnnotationDate: TimeInterval {
+        annotations.map { $0.modifiedAt ?? $0.createdAt ?? 0 }.max() ?? 0
+    }
 }
 
 struct Annotation: Hashable {
