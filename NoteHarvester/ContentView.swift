@@ -21,8 +21,10 @@ struct ContentView: View {
                         .foregroundColor(.gray)
                 }
             }
-            .onChange(of: viewModel.selectedBooks) {
-                viewModel.loadAnnotations() // Load annotations when selected books change
+            .onChange(of: viewModel.selectedBooks) { _ in
+                DispatchQueue.main.async {
+                    viewModel.loadAnnotations() // Load annotations when selected books change
+                }
             }
             .navigationTitle("Books")
         } detail: {
