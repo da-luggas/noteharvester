@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		80AE22992CA47C0B00CE3BB2 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 80AE22982CA47C0B00CE3BB2 /* SQLite */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		80E524702CA3EDB800FC461D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80AE22992CA47C0B00CE3BB2 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = NoteHarvester;
 			packageProductDependencies = (
+				80AE22982CA47C0B00CE3BB2 /* SQLite */,
 			);
 			productName = NoteHarvester;
 			productReference = 80E5245E2CA3EDB700FC461D /* NoteHarvester.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 80E524552CA3EDB700FC461D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				80AE22972CA47C0B00CE3BB2 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 80E5245F2CA3EDB700FC461D /* Products */;
 			projectDirPath = "";
@@ -549,6 +558,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		80AE22972CA47C0B00CE3BB2 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80AE22982CA47C0B00CE3BB2 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80AE22972CA47C0B00CE3BB2 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 80E524562CA3EDB700FC461D /* Project object */;
 }

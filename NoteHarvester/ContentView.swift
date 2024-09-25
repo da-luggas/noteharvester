@@ -8,65 +8,48 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var books: [Book] = []
-    @State private var selectedBook: Book?
-    @State private var annotations: [Annotation] = []
-    private let databaseManager = DatabaseManager()
+    @StateObject private var viewModel = ContentViewModel()
 
     var body: some View {
         NavigationSplitView {
-            List(books, id: \.id, selection: $selectedBook) { book in
-                HStack {
+            // Left side: List of books with multi-selection enabled
+            List(viewModel.books, id: \.self, selection: $viewModel.selectedBooks) { book in
+                VStack(alignment: .leading) {
                     Text(book.title)
-                    Spacer()
                     Text(book.author)
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    selectedBook = book
-                }
             }
-            .onAppear {
-                do {
-                    books = try databaseManager.getBooks()
-                } catch {
-                    print("Failed to load books: \(error)")
-                }
+            .onChange(of: viewModel.selectedBooks) {
+                viewModel.loadAnnotations() // Load annotations when selected books change
             }
-            .onChange(of: selectedBook) { newBook in
-                if let newBook = newBook {
-                    do {
-                        annotations = try databaseManager.getAnnotations(forBookId: newBook.id)
-                    } catch {
-                        print("Failed to load annotations: \(error)")
-                    }
-                }
-            }
+            .navigationTitle("Books")
         } detail: {
-            if let selectedBook = selectedBook {
-                List(annotations, id: \.assetId) { annotation in
+            if viewModel.annotations.isEmpty {
+                Text("Select one or more books to view annotations.")
+                    .font(.headline)
+                    .foregroundColor(.gray)
+            } else {
+                // Right side: List of annotations, selectable
+                List(viewModel.annotations, id: \.self, selection: $viewModel.selectedAnnotation) { annotation in
                     VStack(alignment: .leading) {
                         Text(annotation.quote)
                             .font(.headline)
-                        if (annotation.comment != nil) {
-                            Text(annotation.comment ?? "")
+                            .foregroundColor(.primary)
+                        
+                        if let comment = annotation.comment {
+                            Text(comment)
                                 .font(.subheadline)
+                                .foregroundColor(.secondary)
                         }
                     }
+                    .padding(.vertical, 5)
                 }
-                .onAppear {
-                    do {
-                        annotations = try databaseManager.getAnnotations(forBookId: selectedBook.id)
-                    } catch {
-                        print("Failed to load annotations: \(error)")
-                    }
-                }
-            } else {
-                Text("Select a book to view annotations")
+                .navigationTitle("Annotations")
             }
         }
+        .frame(minWidth: 600, minHeight: 400)
     }
 }
 

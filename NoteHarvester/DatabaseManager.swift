@@ -87,9 +87,9 @@ struct Book: Hashable {
     let author: String
 }
 
-struct Annotation {
+struct Annotation: Hashable {
     let assetId: String
-    let quote: String?
+    let quote: String!
     let comment: String?
     let chapter: String?
     let colorCode: String?
