@@ -31,7 +31,7 @@ struct ContentView: View {
                     .font(.headline)
                     .foregroundColor(.gray)
             } else {
-                List(annotations, id: \.self, selection: $selectedAnnotations) { annotation in
+                List(annotations, id: \.id, selection: $selectedAnnotations) { annotation in
                     VStack(alignment: .leading) {
                         Text(annotation.quote)
                             .font(.headline)
