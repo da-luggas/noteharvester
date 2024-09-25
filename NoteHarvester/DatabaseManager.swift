@@ -49,26 +49,28 @@ class DatabaseManager {
         return books
     }
     
-    func getAnnotations() throws -> [Annotation] {
+    func getAnnotations(forBookId bookId: String) throws -> [Annotation] {
         let annotationsFiles = try FileManager.default.contentsOfDirectory(atPath: ANNOTATION_DB_PATH).filter { $0.hasSuffix(".sqlite") }
         var annotations: [Annotation] = []
-        
+
         for file in annotationsFiles {
             let db = try Connection("\(ANNOTATION_DB_PATH)/\(file)")
             let stmt = try db.prepare(SELECT_ALL_ANNOTATIONS_QUERY)
             for row in stmt {
-                annotations.append(Annotation(
-                    assetId: row[0] as! String,
-                    quote: row[1] as! String,
-                    comment: row[2] as! String,
-                    chapter: row[3] as! String,
-                    colorCode: row[4] as! String,
-                    modifiedAt: convertAppleTime(row[5] as! Int),
-                    createdAt: convertAppleTime(row[6] as! Int)
-                ))
+                if row[0] as! String == bookId {
+                    annotations.append(Annotation(
+                        assetId: row[0] as! String,
+                        quote: row[1] as! String,
+                        comment: row[2] as! String,
+                        chapter: row[3] as! String,
+                        colorCode: row[4] as! String,
+                        modifiedAt: convertAppleTime(row[5] as! Int),
+                        createdAt: convertAppleTime(row[6] as! Int)
+                    ))
+                }
             }
         }
-        
+
         return annotations
     }
     
