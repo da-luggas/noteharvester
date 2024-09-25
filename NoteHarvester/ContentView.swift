@@ -86,7 +86,7 @@ struct ContentView: View {
     private func loadBooks() {
         do {
             var books = try databaseManager.getBooks()
-            books.sort { $0.latestAnnotationDate > $1.latestAnnotationDate }
+            books.sort { $0.latestAnnotationDate <= $1.latestAnnotationDate }
             self.books = books
         } catch {
             print("Failed to load books: \(error)")
