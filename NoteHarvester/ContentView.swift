@@ -16,13 +16,32 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List(books, id: \.id, selection: $selectedBook) { book in
-                Text(book.title)
+                HStack {
+                    Text(book.title)
+                    Spacer()
+                    Text(book.author)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    selectedBook = book
+                }
             }
             .onAppear {
                 do {
                     books = try databaseManager.getBooks()
                 } catch {
                     print("Failed to load books: \(error)")
+                }
+            }
+            .onChange(of: selectedBook) { newBook in
+                if let newBook = newBook {
+                    do {
+                        annotations = try databaseManager.getAnnotations(forBookId: newBook.id)
+                    } catch {
+                        print("Failed to load annotations: \(error)")
+                    }
                 }
             }
         } detail: {
