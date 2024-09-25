@@ -94,6 +94,16 @@ class DatabaseManager {
         guard let document = EPUBDocument(url: URL(fileURLWithPath: bookPathString)) else { return nil }
         return document.cover
     }
+    
+    func exportAnnotationsToCSV(annotations: [Annotation], fileName: String) throws {
+        let csvString = annotations.map { annotation in
+            return "\(annotation.assetId),\(annotation.quote ?? ""),\(annotation.comment ?? ""),\(annotation.chapter ?? ""),\(annotation.colorCode ?? ""),\(annotation.modifiedAt ?? 0),\(annotation.createdAt ?? 0)"
+        }.joined(separator: "\n")
+        
+        let fileURL = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
+        try csvString.write(to: fileURL, atomically: true, encoding: .utf8)
+        print("Annotations exported to: \(fileURL.path)")
+    }
 }
 
 struct Book: Hashable {
