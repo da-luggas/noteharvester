@@ -79,7 +79,7 @@ class DatabaseManager {
     }
 }
 
-struct Book {
+struct Book: Hashable {
     let id: String
     let title: String
     let author: String
