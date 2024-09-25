@@ -58,15 +58,17 @@ class DatabaseManager {
             let stmt = try db.prepare(SELECT_ALL_ANNOTATIONS_QUERY)
             for row in stmt {
                 if row[0] as! String == bookId {
-                    annotations.append(Annotation(
-                        assetId: row[0] as! String,
-                        quote: row[1] as! String,
-                        comment: row[2] as! String,
-                        chapter: row[3] as! String,
-                        colorCode: row[4] as! String,
-                        modifiedAt: convertAppleTime(row[5] as! Int),
-                        createdAt: convertAppleTime(row[6] as! Int)
-                    ))
+                    if let assetId = row[0] as? String {
+                        annotations.append(Annotation(
+                            assetId: assetId,
+                            quote: row[1] as? String,
+                            comment: row[2] as? String,
+                            chapter: row[3] as? String,
+                            colorCode: row[4] as? String,
+                            modifiedAt: (row[5] as? Int).flatMap { convertAppleTime($0) },
+                            createdAt: (row[6] as? Int).flatMap { convertAppleTime($0) }
+                        ))
+                    }
                 }
             }
         }
@@ -87,10 +89,10 @@ struct Book: Hashable {
 
 struct Annotation {
     let assetId: String
-    let quote: String
-    let comment: String
-    let chapter: String
-    let colorCode: String
-    let modifiedAt: TimeInterval
-    let createdAt: TimeInterval
+    let quote: String?
+    let comment: String?
+    let chapter: String?
+    let colorCode: String?
+    let modifiedAt: TimeInterval?
+    let createdAt: TimeInterval?
 }
