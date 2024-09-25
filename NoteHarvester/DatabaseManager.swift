@@ -43,7 +43,15 @@ class DatabaseManager {
             let db = try Connection("\(BOOK_DB_PATH)/\(file)")
             let stmt = try db.prepare(SELECT_ALL_BOOKS_QUERY)
             for row in stmt {
-                books.append(Book(id: row[0] as! String, title: row[1] as! String, author: row[2] as! String, cover: parseCoverImage(bookPathString: row[3] as! String)))
+                let id = row[0] as! String
+                let title = row[1] as! String
+                let author = row[2] as! String
+                guard let coverPathString = row[3] as? String else {
+                    continue
+                }
+                let cover = parseCoverImage(bookPathString: coverPathString)
+                
+                books.append(Book(id: id, title: title, author: author, cover: cover))
             }
         }
         

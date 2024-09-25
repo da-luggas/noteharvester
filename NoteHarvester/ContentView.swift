@@ -18,20 +18,46 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List(books, id: \.self, selection: $selectedBooks) { book in
-                VStack(alignment: .leading) {
-                    Text(book.title)
-                    Text(book.author)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                HStack {
+                    if let coverURL = book.cover {
+                        AsyncImage(url: coverURL) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 60)
+                        } placeholder: {
+                            Image(systemName: "book.closed")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 60)
+                                .foregroundColor(.secondary)
+                        }
+                    } else {
+                        Image(systemName: "book.closed")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 60)
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text(book.author)
+                            .font(.caption)
+                        Text(book.title)
+                            .font(.headline)
+                        Text("\(annotations.count) Highlights")
+                    }
                 }
             }
         } detail: {
-            if annotations.isEmpty {
+            if selectedBooks.isEmpty {
                 Text("Select one or more books to view annotations.")
+            } else if annotations.isEmpty {
+                Text("There are no annotations in the selected books.")
                     .font(.headline)
                     .foregroundColor(.gray)
             } else {
-                List(annotations, id: \.id, selection: $selectedAnnotations) { annotation in
+                List(annotations, id: \.self, selection: $selectedAnnotations) { annotation in
                     VStack(alignment: .leading) {
                         Text(annotation.quote)
                             .font(.headline)

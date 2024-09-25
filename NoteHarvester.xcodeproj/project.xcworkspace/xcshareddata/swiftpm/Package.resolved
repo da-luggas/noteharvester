@@ -1,6 +1,24 @@
 {
-  "originHash" : "96e0b2c5aa6295de957dc9d748d3b6d7a3925386507df9cee99ca8de309e3cf7",
+  "originHash" : "425d16996e5cf0a0b43a97bc1fec2d93b2f3f71d39a6f08f7bd2f3057f35e958",
   "pins" : [
+    {
+      "identity" : "aexml",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tadija/AEXML",
+      "state" : {
+        "revision" : "db806756c989760b35108146381535aec231092b",
+        "version" : "4.7.0"
+      }
+    },
+    {
+      "identity" : "epubkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/witekbobrowski/EPUBKit.git",
+      "state" : {
+        "revision" : "c8148577adc407ab1d4fcd45ceb58b54fb96b344",
+        "version" : "0.4.0"
+      }
+    },
     {
       "identity" : "sqlite.swift",
       "kind" : "remoteSourceControl",
@@ -8,6 +26,15 @@
       "state" : {
         "revision" : "a95fc6df17d108bd99210db5e8a9bac90fe984b8",
         "version" : "0.15.3"
+      }
+    },
+    {
+      "identity" : "zip",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marmelroy/Zip",
+      "state" : {
+        "revision" : "67fa55813b9e7b3b9acee9c0ae501def28746d76",
+        "version" : "2.1.2"
       }
     }
   ],
