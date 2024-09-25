@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		80E524702CA3EDB800FC461D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80E524562CA3EDB700FC461D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80E5245D2CA3EDB700FC461D;
+			remoteInfo = NoteHarvester;
+		};
+		80E5247A2CA3EDB800FC461D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80E524562CA3EDB700FC461D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80E5245D2CA3EDB700FC461D;
+			remoteInfo = NoteHarvester;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		80E5245E2CA3EDB700FC461D /* NoteHarvester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteHarvester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80E5246F2CA3EDB800FC461D /* NoteHarvesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteHarvesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80E524792CA3EDB800FC461D /* NoteHarvesterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteHarvesterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		80E524602CA3EDB700FC461D /* NoteHarvester */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NoteHarvester;
+			sourceTree = "<group>";
+		};
+		80E524722CA3EDB800FC461D /* NoteHarvesterTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NoteHarvesterTests;
+			sourceTree = "<group>";
+		};
+		80E5247C2CA3EDB800FC461D /* NoteHarvesterUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NoteHarvesterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80E5245B2CA3EDB700FC461D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E5246C2CA3EDB800FC461D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E524762CA3EDB800FC461D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80E524552CA3EDB700FC461D = {
+			isa = PBXGroup;
+			children = (
+				80E524602CA3EDB700FC461D /* NoteHarvester */,
+				80E524722CA3EDB800FC461D /* NoteHarvesterTests */,
+				80E5247C2CA3EDB800FC461D /* NoteHarvesterUITests */,
+				80E5245F2CA3EDB700FC461D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80E5245F2CA3EDB700FC461D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80E5245E2CA3EDB700FC461D /* NoteHarvester.app */,
+				80E5246F2CA3EDB800FC461D /* NoteHarvesterTests.xctest */,
+				80E524792CA3EDB800FC461D /* NoteHarvesterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80E5245D2CA3EDB700FC461D /* NoteHarvester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80E524832CA3EDB800FC461D /* Build configuration list for PBXNativeTarget "NoteHarvester" */;
+			buildPhases = (
+				80E5245A2CA3EDB700FC461D /* Sources */,
+				80E5245B2CA3EDB700FC461D /* Frameworks */,
+				80E5245C2CA3EDB700FC461D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				80E524602CA3EDB700FC461D /* NoteHarvester */,
+			);
+			name = NoteHarvester;
+			packageProductDependencies = (
+			);
+			productName = NoteHarvester;
+			productReference = 80E5245E2CA3EDB700FC461D /* NoteHarvester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80E5246E2CA3EDB800FC461D /* NoteHarvesterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80E524862CA3EDB800FC461D /* Build configuration list for PBXNativeTarget "NoteHarvesterTests" */;
+			buildPhases = (
+				80E5246B2CA3EDB800FC461D /* Sources */,
+				80E5246C2CA3EDB800FC461D /* Frameworks */,
+				80E5246D2CA3EDB800FC461D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80E524712CA3EDB800FC461D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				80E524722CA3EDB800FC461D /* NoteHarvesterTests */,
+			);
+			name = NoteHarvesterTests;
+			packageProductDependencies = (
+			);
+			productName = NoteHarvesterTests;
+			productReference = 80E5246F2CA3EDB800FC461D /* NoteHarvesterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80E524782CA3EDB800FC461D /* NoteHarvesterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80E524892CA3EDB800FC461D /* Build configuration list for PBXNativeTarget "NoteHarvesterUITests" */;
+			buildPhases = (
+				80E524752CA3EDB800FC461D /* Sources */,
+				80E524762CA3EDB800FC461D /* Frameworks */,
+				80E524772CA3EDB800FC461D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80E5247B2CA3EDB800FC461D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				80E5247C2CA3EDB800FC461D /* NoteHarvesterUITests */,
+			);
+			name = NoteHarvesterUITests;
+			packageProductDependencies = (
+			);
+			productName = NoteHarvesterUITests;
+			productReference = 80E524792CA3EDB800FC461D /* NoteHarvesterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80E524562CA3EDB700FC461D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					80E5245D2CA3EDB700FC461D = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					80E5246E2CA3EDB800FC461D = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 80E5245D2CA3EDB700FC461D;
+					};
+					80E524782CA3EDB800FC461D = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 80E5245D2CA3EDB700FC461D;
+					};
+				};
+			};
+			buildConfigurationList = 80E524592CA3EDB700FC461D /* Build configuration list for PBXProject "NoteHarvester" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80E524552CA3EDB700FC461D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 80E5245F2CA3EDB700FC461D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80E5245D2CA3EDB700FC461D /* NoteHarvester */,
+				80E5246E2CA3EDB800FC461D /* NoteHarvesterTests */,
+				80E524782CA3EDB800FC461D /* NoteHarvesterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80E5245C2CA3EDB700FC461D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E5246D2CA3EDB800FC461D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E524772CA3EDB800FC461D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80E5245A2CA3EDB700FC461D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E5246B2CA3EDB800FC461D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E524752CA3EDB800FC461D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80E524712CA3EDB800FC461D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80E5245D2CA3EDB700FC461D /* NoteHarvester */;
+			targetProxy = 80E524702CA3EDB800FC461D /* PBXContainerItemProxy */;
+		};
+		80E5247B2CA3EDB800FC461D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80E5245D2CA3EDB700FC461D /* NoteHarvester */;
+			targetProxy = 80E5247A2CA3EDB800FC461D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		80E524812CA3EDB800FC461D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80E524822CA3EDB800FC461D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		80E524842CA3EDB800FC461D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NoteHarvester/NoteHarvester.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NoteHarvester/Preview Content\"";
+				DEVELOPMENT_TEAM = QR6L8PK5X3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.selchlukas.NoteHarvester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		80E524852CA3EDB800FC461D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NoteHarvester/NoteHarvester.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NoteHarvester/Preview Content\"";
+				DEVELOPMENT_TEAM = QR6L8PK5X3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.selchlukas.NoteHarvester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		80E524872CA3EDB800FC461D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QR6L8PK5X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.selchlukas.NoteHarvesterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteHarvester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NoteHarvester";
+			};
+			name = Debug;
+		};
+		80E524882CA3EDB800FC461D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QR6L8PK5X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.selchlukas.NoteHarvesterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteHarvester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NoteHarvester";
+			};
+			name = Release;
+		};
+		80E5248A2CA3EDB800FC461D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QR6L8PK5X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.selchlukas.NoteHarvesterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = NoteHarvester;
+			};
+			name = Debug;
+		};
+		80E5248B2CA3EDB800FC461D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QR6L8PK5X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.selchlukas.NoteHarvesterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = NoteHarvester;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80E524592CA3EDB700FC461D /* Build configuration list for PBXProject "NoteHarvester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80E524812CA3EDB800FC461D /* Debug */,
+				80E524822CA3EDB800FC461D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80E524832CA3EDB800FC461D /* Build configuration list for PBXNativeTarget "NoteHarvester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80E524842CA3EDB800FC461D /* Debug */,
+				80E524852CA3EDB800FC461D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80E524862CA3EDB800FC461D /* Build configuration list for PBXNativeTarget "NoteHarvesterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80E524872CA3EDB800FC461D /* Debug */,
+				80E524882CA3EDB800FC461D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80E524892CA3EDB800FC461D /* Build configuration list for PBXNativeTarget "NoteHarvesterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80E5248A2CA3EDB800FC461D /* Debug */,
+				80E5248B2CA3EDB800FC461D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80E524562CA3EDB700FC461D /* Project object */;
+}
