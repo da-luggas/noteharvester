@@ -50,8 +50,10 @@ struct ContentView: View {
                     VStack(alignment: .leading) {
                         Text(annotation.quote)
                             .font(.headline)
-                        Text(annotation.comment)
-                            .font(.subheadline)
+                        if (annotation.comment != nil) {
+                            Text(annotation.comment ?? "")
+                                .font(.subheadline)
+                        }
                     }
                 }
                 .onAppear {
