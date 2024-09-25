@@ -7,6 +7,7 @@
 
 import Foundation
 import SQLite
+import EPUBKit
 
 class DatabaseManager {
     private let APPLE_EPOCH_START: TimeInterval = 978307200 // 2001-01-01
@@ -31,7 +32,7 @@ class DatabaseManager {
     """
     
     private let SELECT_ALL_BOOKS_QUERY = """
-    SELECT ZASSETID as id, ZTITLE as title, ZAUTHOR as author FROM ZBKLIBRARYASSET;
+    SELECT ZASSETID as id, ZTITLE as title, ZAUTHOR as author, ZPATH as path FROM ZBKLIBRARYASSET;
     """
     
     func getBooks() throws -> [Book] {
@@ -42,7 +43,7 @@ class DatabaseManager {
             let db = try Connection("\(BOOK_DB_PATH)/\(file)")
             let stmt = try db.prepare(SELECT_ALL_BOOKS_QUERY)
             for row in stmt {
-                books.append(Book(id: row[0] as! String, title: row[1] as! String, author: row[2] as! String))
+                books.append(Book(id: row[0] as! String, title: row[1] as! String, author: row[2] as! String, cover: parseCoverImage(bookPathString: row[3] as! String)))
             }
         }
         
@@ -79,12 +80,20 @@ class DatabaseManager {
     private func convertAppleTime(_ appleTime: Int) -> TimeInterval {
         return APPLE_EPOCH_START + TimeInterval(appleTime)
     }
+    
+    private func parseCoverImage(bookPathString: String) -> URL? {
+        
+        guard let document = EPUBDocument(url: URL(fileURLWithPath: bookPathString)) else { return nil}
+        
+        return document.cover
+    }
 }
 
 struct Book: Hashable {
     let id: String
     let title: String
     let author: String
+    let cover: URL?
 }
 
 struct Annotation: Hashable {
