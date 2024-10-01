@@ -12,7 +12,7 @@ Since Apple removed the ability to bulk export the highlights and notes you crea
 ## Installation
 - Download the latest [Release](https://github.com/da-luggas/NoteHarvester/releases)
 - Drag the app into your Applications folder
-- Allow the app to access other app's folders as well as iNoteHarvesterd. This is needed to access the Apple Books library
+- Allow the app to access other app's folders. This is needed to access the Apple Books library
 
 ## Planned for the future
 - Export into different formats (e.g. Readwise, Excel)
