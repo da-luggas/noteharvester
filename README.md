@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/da-luggas/NoteHarvester/main/noteharvester/Assets.xcassets/AppIcon.appiconset/Group%201-128.png)
+![Logo](https://raw.githubusercontent.com/da-luggas/noteharvester/main/NoteHarvester/Assets.xcassets/AppIcon.appiconset/Group%201-128.png)
 # NoteHarvester - Apple Books highlight exporter written in Swift
 
 Since Apple removed the ability to bulk export the highlights and notes you create within the Apple Books application, third-party options have to be used to perform this simple task. A very effective solution is **NoteHarvester**, the easy-to-use and macOS native Apple Books highlights exporter.
