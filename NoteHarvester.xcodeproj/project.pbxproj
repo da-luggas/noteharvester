@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		80AE22992CA47C0B00CE3BB2 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 80AE22982CA47C0B00CE3BB2 /* SQLite */; };
 		80AE22A12CA485CA00CE3BB2 /* EPUBKit in Frameworks */ = {isa = PBXBuildFile; productRef = 80AE22A02CA485CA00CE3BB2 /* EPUBKit */; };
+		80C27FBA2CAC0C9B0085F70D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 80C27FB92CAC0C940085F70D /* README.md */; };
+		80C27FBC2CAC0CB60085F70D /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 80C27FBB2CAC0CB00085F70D /* COPYING */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80C27FB92CAC0C940085F70D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		80C27FBB2CAC0CB00085F70D /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		80E5245E2CA3EDB700FC461D /* NoteHarvester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteHarvester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80E5246F2CA3EDB800FC461D /* NoteHarvesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteHarvesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80E524792CA3EDB800FC461D /* NoteHarvesterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteHarvesterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +86,8 @@
 		80E524552CA3EDB700FC461D = {
 			isa = PBXGroup;
 			children = (
+				80C27FBB2CAC0CB00085F70D /* COPYING */,
+				80C27FB92CAC0C940085F70D /* README.md */,
 				80E524602CA3EDB700FC461D /* NoteHarvester */,
 				80E524722CA3EDB800FC461D /* NoteHarvesterTests */,
 				80E5247C2CA3EDB800FC461D /* NoteHarvesterUITests */,
@@ -225,6 +231,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C27FBC2CAC0CB60085F70D /* COPYING in Resources */,
+				80C27FBA2CAC0C9B0085F70D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
