@@ -18,3 +18,10 @@ Since Apple removed the ability to bulk export the highlights and notes you crea
 - Export into different formats (e.g. Readwise, Excel)
 - Automatic updates using Sparkle
 - Automated synchronization of bookmarks with third party apps
+
+## Donate
+I am a student working on my projects in my leisure time. A lot of coffee is involved in the development of apps like NoteHarvester. If you find my work helpful, I'd super thankful for a little help :)
+
+<a href="https://www.paypal.com/donate/?hosted_button_id=JHAQA9E7HBE4A" target="_blank">
+  <img src="https://raw.githubusercontent.com/aha999/DonateButtons/master/Paypal.png" alt="Donate" width="25%">
+</a>
