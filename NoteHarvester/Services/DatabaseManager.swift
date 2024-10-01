@@ -62,7 +62,7 @@ class DatabaseManager {
     private func getAnnotations(forBookId bookId: String) throws -> [Annotation] {
         let annotationsFiles = try FileManager.default.contentsOfDirectory(atPath: ANNOTATION_DB_PATH).filter { $0.hasSuffix(".sqlite") }
         var annotations: [Annotation] = []
-
+        
         for file in annotationsFiles {
             let db = try Connection("\(ANNOTATION_DB_PATH)/\(file)")
             let stmt = try db.prepare(SELECT_ALL_ANNOTATIONS_QUERY)
@@ -74,7 +74,7 @@ class DatabaseManager {
                             quote: row[1] as? String,
                             comment: row[2] as? String,
                             chapter: row[3] as? String,
-                            colorCode: row[4] as? String,
+                            colorCode: row[4] as? Int64,
                             modifiedAt: (row[5] as? Int).flatMap { convertAppleTime($0) },
                             createdAt: (row[6] as? Int).flatMap { convertAppleTime($0) }
                         ))
@@ -82,7 +82,7 @@ class DatabaseManager {
                 }
             }
         }
-
+        
         return annotations
     }
     
@@ -97,7 +97,7 @@ class DatabaseManager {
     
     func exportAnnotationsToCSV(annotations: [Annotation], fileName: String) throws {
         let csvString = annotations.map { annotation in
-            return "\(annotation.assetId),\(annotation.quote ?? ""),\(annotation.comment ?? ""),\(annotation.chapter ?? ""),\(annotation.colorCode ?? ""),\(annotation.modifiedAt ?? 0),\(annotation.createdAt ?? 0)"
+            return "\(annotation.assetId),\(annotation.quote ?? ""),\(annotation.comment ?? ""),\(annotation.chapter ?? ""),\(annotation.modifiedAt ?? 0),\(annotation.createdAt ?? 0)"
         }.joined(separator: "\n")
         
         let fileURL = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
@@ -121,10 +121,10 @@ struct Book: Hashable {
 struct Annotation: Hashable {
     let id: UUID = UUID()
     let assetId: String
-    let quote: String!
+    let quote: String?
     let comment: String?
     let chapter: String?
-    let colorCode: String?
+    let colorCode: Int64?
     let modifiedAt: TimeInterval?
     let createdAt: TimeInterval?
 }
